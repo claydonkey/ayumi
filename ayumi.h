@@ -2,7 +2,9 @@
 
 #ifndef AYUMI_H
 #define AYUMI_H
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 enum {
   TONE_CHANNELS = 3,
   DECIMATE_FACTOR = 8,
@@ -67,5 +69,7 @@ void ayumi_set_envelope(struct ayumi* ay, int period);
 void ayumi_set_envelope_shape(struct ayumi* ay, int shape);
 void ayumi_process(struct ayumi* ay);
 void ayumi_remove_dc(struct ayumi* ay);
-
+#ifdef __cplusplus
+}
+#endif
 #endif
